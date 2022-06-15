@@ -1,11 +1,15 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import QrCodeScannerComponent from '../components/ScannerComponent/QrCodeScannerComponent'
+import FloatingButton from '../components/ActionComponent/FloatingButton'
 
-const QrScannerScreen = () => {
+const QrScannerScreen = (props) => {
   return (
-    <View>
-      <Text>QrScannerScreen</Text>
-    </View>
+    <>
+      <QrCodeScannerComponent props={props}/>
+      <FloatingButton 
+        navigation={props.navigation}
+      />
+    </>
   )
 }
 
