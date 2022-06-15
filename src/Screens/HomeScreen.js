@@ -1,22 +1,21 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React from 'react';
-import HeaderComponent from '../components/HeaderComponent/Header';
 import FloatingButton from '../components/ActionComponent/FloatingButton';
+import OtpGeneratorComponent from '../components/OtpGeneratorComponent';
+import HeaderComponent from '../components/HeaderComponent/Header';
 const HomeScreen = props => {
   return (
     <>
-      <View>
-        <HeaderComponent title={'OxyShield'} />
+      <HeaderComponent title={'OxyShield'} />
+      <View style={styles.container}>
+        <OtpGeneratorComponent />
       </View>
-      <FloatingButton 
-        navigation={props.navigation}
-      />
+      <FloatingButton navigation={props.navigation} />
     </>
   );
 };
 
 export default HomeScreen;
-
 const styles = StyleSheet.create({
   textBold: {
     fontWeight: '500',

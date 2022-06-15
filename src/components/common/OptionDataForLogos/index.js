@@ -6,7 +6,7 @@ export default Options = [
     },
     {
       application_name: 'Aristi',
-      image: require('../../../assets/images/aristi.png'),
+      image: require('../../../assets/images/aristi.jpg'),
     },
     {
       application_name: 'Flowxi',

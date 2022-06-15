@@ -7,8 +7,8 @@ import {
   TouchableWithoutFeedback,
   Image
 } from 'react-native';
-// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 // import { useNavigation } from '@react-navigation/native';
 class FloatingButton extends Component {
@@ -93,20 +93,20 @@ class FloatingButton extends Component {
         {/* <Animated.View style={[styles.background]}> */}
           <TouchableWithoutFeedback onPress={() => {navigation.replace('Home'),this.toggleOpen()}}>
             <Animated.View style={[styles.button, homeAnimation,styles.secondary, styles.additioncolor2]}>
-               {/* <Ionicons name="home-outline" size={20} color="#fff" /> */}
-               <Image source={require('../../assets/images/Home.jpg')} style={{width:30,height:30, borderRadius:15}}/>
+               <Ionicons name="home-outline" size={20} color="#fff" />
+               {/* <Image source={require('../../assets/images/Home.jpg')} style={{width:30,height:30, borderRadius:15}}/> */}
             </Animated.View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={() => {navigation.replace('AddAccount'),this.toggleOpen()}}>
             <Animated.View style={[styles.button, secureAnimation,styles.secondary,styles.additioncolor1]}>  
-              {/* <MaterialIcons name="input" size={20} color="#fff" /> */}
-              <Image source={require('../../assets/images/addAccount.jpg')} style={{width:30,height:30, borderRadius:15}}/>
+              <MaterialIcons name="input" size={20} color="#fff" />
+              {/* <Image source={require('../../assets/images/addAccount.jpg')} style={{width:30,height:30, borderRadius:15}}/> */}
             </Animated.View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={() =>{ navigation.replace('Scanner'),this.toggleOpen()}}>
             <Animated.View style={[styles.button, qrcodeanimation,styles.secondary]}>
-              {/* <MaterialIcons name="qr-code" size={20} color="#fff" /> */}
-               <Image source={require('../../assets/images/scanner.jpg')} style={{width:30,height:30, borderRadius:15}}/>
+              <MaterialIcons name="qr-code" size={20} color="#fff" />
+               {/* <Image source={require('../../assets/images/scanner.jpg')} style={{width:30,height:30, borderRadius:15}}/> */}
             </Animated.View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={() => this.toggleOpen()}>

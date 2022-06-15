@@ -1,6 +1,6 @@
 import { View, Text,StyleSheet,TouchableOpacity, Dimensions, ScrollView, Image } from 'react-native'
 import React, { useEffect } from 'react'
-// import Ionicons from 'react-native-vector-icons/Ionicons'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import { setUserImageData } from '../../redux/Actions/SecretKeyActions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -54,7 +54,7 @@ const ModalPicker = (props) => {
     onPress={()=>props.changeModalVisibility(false)}
     >
         <ScrollView style={[styles.modal,{width:WIDTH - 20, height:HEIGHT/2}]}>
-          {/* <Ionicons name="close-outline" size={32} onPress={(e)=>{e.stopPropagation(),props.changeModalVisibility(false)}} style={styles.closeIcon}/> */}
+          <Ionicons name="close-outline" size={32} onPress={(e)=>{e.stopPropagation(),props.changeModalVisibility(false)}} style={styles.closeIcon}/>
             {option}
         </ScrollView>    
     </TouchableOpacity>
