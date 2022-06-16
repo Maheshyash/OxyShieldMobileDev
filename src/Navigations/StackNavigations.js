@@ -7,7 +7,7 @@ import AddAccountScreen from '../Screens/AddAccountScreen';
 const Stack = createStackNavigator();
 const StackNavigations = () => {
   return (
-    <Stack.Navigator initialRouteName='AddAccount' screenOptions={{headerShown:false}}>
+    <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown:false}}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Scanner" component={QrScannerScreen} />
       <Stack.Screen name="AddAccount" component={AddAccountScreen} />
