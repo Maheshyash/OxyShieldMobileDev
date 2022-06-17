@@ -43,7 +43,7 @@ const ModalPicker = (props) => {
                 key={index}
             >
                 <Text style={styles.text}>{item.application_name}</Text>
-                <Image source={item.image}style={styles.image}/>
+                <Image source={item.image} style={styles.image}/>
 
             </TouchableOpacity>
         )
@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
-    fontWeight: '',
   },
   image: {
     borderRadius: 10,

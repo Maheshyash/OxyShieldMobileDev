@@ -2,10 +2,7 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity,
-  Linking,
   Alert,
-  StatusBar,
 } from 'react-native';
 import React from 'react';
 import {bindActionCreators} from 'redux';
@@ -15,6 +12,7 @@ import {RNCamera} from 'react-native-camera';
 import BarcodeMask from 'react-native-barcode-mask';
 import {URL, URLSearchParams} from 'react-native-url-polyfill';
 import Options from '../common/OptionDataForLogos';
+import Ionicons from 'react-native-vector-icons/Ionicons'
 class QrScanner extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +25,6 @@ class QrScanner extends React.Component {
     const imageInfo = Options.filter(
       item => item.application_name == applicationName,
     ).map(ele => ele.image);
-    console.log(imageInfo, 'ImageINfo');
     return imageInfo.length > 0 ? imageInfo[0] : '';
   };
   onFailure = () => {
@@ -43,7 +40,6 @@ class QrScanner extends React.Component {
     ]);
   };
   onSuccess = e => {
-    // const {navigation, setSecretKeyUserData} = this.props;
     this.setState({isError: true});
     if (e.hasOwnProperty('data')) {
       if (!e.data.includes('otpauth://totp/')) return this.onFailure();
@@ -59,7 +55,6 @@ class QrScanner extends React.Component {
         company_name,
         image,
       };
-      console.log(userData, 'userData');
       if (secret_key == null) return this.onFailure();
       else if (application_name == null) return this.onFailure();
       else if (company_name == null) return this.onFailure();
@@ -91,7 +86,6 @@ class QrScanner extends React.Component {
     }
   };
   render() {
-    console.log(this.props, 'this.props inside Qr Scanner');
     return (
       <View style={styles.container}>
         {this.state.isError == !true && (
@@ -111,6 +105,7 @@ class QrScanner extends React.Component {
             <View
               style={{flex: 1, flexDirection: 'row', justifyContent: 'center'}}>
               <View style={styles.header}>
+                <Ionicons name="arrow-back-outline" size={30} color={'white'} onPress={()=>this.props.navigation.replace(this.props.goBack)} style={styles.backIcon}/>
                 <Text style={{fontSize: 22, color: 'white'}}>
                   {' '}
                   Scan Qr-code{' '}
@@ -120,26 +115,12 @@ class QrScanner extends React.Component {
           </RNCamera>
         )}
       </View>
-      // <View style={{flex:1}}>
-      // <QRCodeScanner
-      //   onRead={this.onSuccess}
-      //   // flashMode={RNCamera.Constants.FlashMode.torch}
-      //   topContent={
-      //     <Text style={{fontSize:18,fontWeight:'600'}}>
-      //       Scan Qr-Code
-      //     </Text>
-      //   }
-      //   // bottomViewStyle={{display:'none'}}
-      //   // topViewStyle={{display:'none'}}
-      //   showMarker={true}
-      //   reactivate={this.state.isActive}
-      //   cameraTimeout={5000}
-      // />
-      // </View>
     );
   }
 }
-const mapStateToProps = state => ({});
+const mapStateToProps = state =>({
+  goBack:state.navigationData.goBack
+})
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators({setSecretKeyUserData}, dispatch),
 });
@@ -165,11 +146,13 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
+    flexDirection:'row',
     backgroundColor: '#396EB0',
-    // borderRadius: 5,
     padding: 15,
     paddingHorizontal: 20,
     alignSelf: 'flex-start',
-    // margin: 20,
   },
+  backIcon:{
+    marginRight:10
+  }
 });

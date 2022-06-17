@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   rowFrontVisible: {
     backgroundColor: '#D7E9F7',
     borderRadius: 5,
-    paddingVertical: 10,
+    paddingHorizontal: 10,
     paddingVertical:0,
     marginBottom: 15,
     elevation: 5,

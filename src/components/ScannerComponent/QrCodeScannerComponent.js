@@ -3,12 +3,7 @@ import React from 'react';
 import QrScanner from './QrScanner';
 
 const QrCodeScannerComponent = ({props}) => {
-  console.log(props, 'props inside QrCodeScannerComponent');
-  return (
-    <>
-      <QrScanner navigation={props.navigation} />
-    </>
-  );
+  return <QrScanner navigation={props.navigation} />;
 };
 
 export default QrCodeScannerComponent;

@@ -94,25 +94,21 @@ class FloatingButton extends Component {
           <TouchableWithoutFeedback onPress={() => {navigation.replace('Home'),this.toggleOpen()}}>
             <Animated.View style={[styles.button, homeAnimation,styles.secondary, styles.additioncolor2]}>
                <Ionicons name="home-outline" size={20} color="#fff" />
-               {/* <Image source={require('../../assets/images/Home.jpg')} style={{width:30,height:30, borderRadius:15}}/> */}
             </Animated.View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={() => {navigation.replace('AddAccount'),this.toggleOpen()}}>
             <Animated.View style={[styles.button, secureAnimation,styles.secondary,styles.additioncolor1]}>  
               <MaterialIcons name="input" size={20} color="#fff" />
-              {/* <Image source={require('../../assets/images/addAccount.jpg')} style={{width:30,height:30, borderRadius:15}}/> */}
             </Animated.View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={() =>{ navigation.replace('Scanner'),this.toggleOpen()}}>
             <Animated.View style={[styles.button, qrcodeanimation,styles.secondary]}>
               <MaterialIcons name="qr-code" size={20} color="#fff" />
-               {/* <Image source={require('../../assets/images/scanner.jpg')} style={{width:30,height:30, borderRadius:15}}/> */}
             </Animated.View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={() => this.toggleOpen()}>
             <Animated.View style={[styles.button,styles.menu,rotationAnimation]}>
-               {/* <MaterialIcons name="add" size={24} color="#fff" /> */}
-               <Text style={{fontSize:24,color:'white'}}>+</Text>
+              <MaterialIcons name="add" size={24} color="#fff" />
             </Animated.View>
           </TouchableWithoutFeedback>
         {/* </Animated.View> */}
